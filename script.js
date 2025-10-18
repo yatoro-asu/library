@@ -42,13 +42,13 @@ while (i < books.length) {
         if (genre === "Фэнтези" && index === 0) {
             fantasyBooks.push(books[i]);
         }
-        if (genre === "Любовная фантастика" && index === 0) {
+        if (genre === "Любовная фантастика" && index === 1) {
             romanceFantasyBooks.push(books[i]);
         }
-        if (genre === "Попаданцы" && index === 0) {
+        if (genre === "Попаданцы" && index === 2) {
             isekaiBooks.push(books[i]);
         }
-        if (genre === "Короткие любовные романы") {
+        if (genre === "Короткие любовные романы" && index === 3) {
             shortRomanceBooks.push(books[i]);
         }
     });
@@ -77,4 +77,5 @@ isekaiBooks.forEach(book => console.log(book.title));
 
 console.log("\nКороткие любовные романы (отсортированы по алфавиту):");
 shortRomanceBooks.forEach(book => console.log(book.title));
+
 
