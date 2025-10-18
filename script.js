@@ -15,22 +15,24 @@ let books = [
     { title: "Среди туманов и снов", genre: "Фэнтези / Любовная фантастика" }
 ];
 
+
 let fantasyBooks = [];
 let romanceFantasyBooks = [];
 let isekaiBooks = [];
 let shortRomanceBooks = [];
+let genres = []; 
 
-let genres = [];
 
+console.log("Первая книга:");
+console.log("Название:", books[0].title);
+console.log("Жанр:", books[0].genre);
+
+
+console.log("\nВсе жанры книг:");
 for (let i = 0; i < books.length; i++) {
-    let bookGenres = books[i].genre.split(' / ');
-    
-    bookGenres.forEach(function(genre) {
-        if (!genres.includes(genre)) {
-            genres.push(genre);
-        }
-    });
+    console.log(books[i].genre);
 }
+
 
 let i = 0;
 while (i < books.length) {
@@ -40,13 +42,13 @@ while (i < books.length) {
         if (genre === "Фэнтези" && index === 0) {
             fantasyBooks.push(books[i]);
         }
-        if (genre === "Любовная фантастика" && index === 1) {
+        if (genre === "Любовная фантастика" && index === 0) {
             romanceFantasyBooks.push(books[i]);
         }
-        if (genre === "Попаданцы" && index === 2) {
+        if (genre === "Попаданцы" && index === 0) {
             isekaiBooks.push(books[i]);
         }
-        if (genre === "Короткие любовные романы" && index === 3) {
+        if (genre === "Короткие любовные романы") {
             shortRomanceBooks.push(books[i]);
         }
     });
@@ -64,13 +66,15 @@ romanceFantasyBooks = sortBooksByTitle(romanceFantasyBooks);
 isekaiBooks = sortBooksByTitle(isekaiBooks);
 shortRomanceBooks = sortBooksByTitle(shortRomanceBooks);
 
-console.log("Все жанры:", genres);
 console.log("\nФэнтези книги (отсортированы по алфавиту):");
 fantasyBooks.forEach(book => console.log(book.title));
+
 console.log("\nЛюбовная фантастика (отсортированы по алфавиту):");
 romanceFantasyBooks.forEach(book => console.log(book.title));
+
 console.log("\nПопаданцы (отсортированы по алфавиту):");
 isekaiBooks.forEach(book => console.log(book.title));
+
 console.log("\nКороткие любовные романы (отсортированы по алфавиту):");
 shortRomanceBooks.forEach(book => console.log(book.title));
 
